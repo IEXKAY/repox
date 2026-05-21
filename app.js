@@ -1,8 +1,12 @@
 // ==========================================================================
-// DATOS PREDETERMINADOS Y CONSTANTES (Se cargan la primera vez que entras)
+// DATOS DE ENLACES Y CATEGORÍAS (Edítalos directamente aquí en el código)
 // ==========================================================================
+
+// Define aquí las categorías de tu repositorio
 const DEFAULT_CATEGORIES = ["Gaming", "Herramientas", "Otros"];
 
+// Define aquí tus enlaces de descarga. 
+// Para añadir uno nuevo, copia un bloque {...} completo, ponle una coma al anterior y pégalo.
 const DEFAULT_LINKS = [
     {
         id: "mock-1",
@@ -46,62 +50,64 @@ const DEFAULT_LINKS = [
     },
     {
         id: "mock-5",
-        title: "ChotOS 101  22H2",
+        title: "ChotOS 10 22H2",
         url: "https://www.mediafire.com/file/57cbwvz689sekxn",
         category: "Otros",
         size: "1.3 GB",
-        description: "ISO",
+        description: "ISO Tomex",
         icon: "download",
         createdAt: Date.now() - 3600000 * 24 * 10 // Hace 10 días
+    },
+    {
+        id: "mock-6",
+        title: "HDD Low Level Format Tool",
+        url: "https://download2391.mediafire.com/riyeir973ijgh3RmnZHJh4v6RauW-8hgprp3jqEzr6hS8d_m2LvBjRxACua4b5d5Rwz63A1onYkA5UDqCxqs1rCyzwscHN_7PuGANLeh439yZBsH-hWgUz-QVuC39r0RsYGQppBmxlIQ4KE10xk9-XwidNkPRgB8LJwvR-41mV8e/12q163k1rmbz1n5/HDD+Low+Level+Format.EXE",
+        category: "Herramientas",
+        size: "1.95 MB",
+        description: "Formateo Lento",
+        icon: "screwdriver-wrench",
+        createdAt: Date.now()
+    },
+    {
+        id: "mi-juego-1",
+        title: "Aquí pones el título de tu juego",
+        url: "https://www.mediafire.com/file/tu-link-real",
+        category: "Gaming",
+        size: "350 MB",
+        description: "Tu descripción personalizada de lo que hace el archivo.",
+        icon: "gamepad",
+        createdAt: Date.now()
+    },
+    {
+        id: "mock-8",
+        title: "7-Zip",
+        url: "https://release-assets.githubusercontent.com/github-production-release-asset/466446150/d9c834c2-819e-4343-9cd4-1ea61004285c?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-05-21T03%3A39%3A01Z&rscd=attachment%3B+filename%3D7z2501-x64.exe&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-05-21T02%3A38%3A22Z&ske=2026-05-21T03%3A39%3A01Z&sks=b&skv=2018-11-09&sig=JnWL0WQteQfpU8fxSOj3CFp%2Bz%2BBEEih8vbDxdZ7ZKBs%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc3OTMzMjE5NywibmJmIjoxNzc5MzMxODk3LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.Kt4iAFZ-Yd-WTALL9O45AxlQuJR-bnb5YtEHlBLb3t4&response-content-disposition=attachment%3B%20filename%3D7z2501-x64.exe&response-content-type=application%2Foctet-stream",
+        category: "Herramientas",
+        size: "1 MB",
+        description: "Descomprimir",
+        icon: "screwdriver-wrench",
+        createdAt: Date.now()
     }
 ];
 
-// ==========================================================================
-// ESTADO DE LA APLICACIÓN
-// ==========================================================================
-// Intentamos cargar las categorías de localStorage. Si no existen, usamos las de defecto.
-let categories = JSON.parse(localStorage.getItem("eskay_categories")) || DEFAULT_CATEGORIES;
-// Intentamos cargar los enlaces de localStorage. Si no existen, usamos los de defecto.
-let links = JSON.parse(localStorage.getItem("eskay_links")) || DEFAULT_LINKS;
+// Asignamos las variables directamente sin usar localStorage
+let categories = DEFAULT_CATEGORIES;
+let links = DEFAULT_LINKS;
 
 // Variables de control de filtros activos
 let currentCategoryFilter = "all"; // Filtrar por "all" (todos) o por un nombre de categoría
 let searchQuery = "";             // Contenido de búsqueda actual
 let sortBy = "recent";            // Criterio de ordenamiento actual (recent, oldest, alpha-asc, alpha-desc)
-let activeDropdownId = null;      // Guarda el ID del menú de la tarjeta abierto actualmente
-let linkIdToDelete = null;        // Guarda el ID del enlace a eliminar
 
 // ==========================================================================
 // ELEMENTOS DEL DOM (Selectores HTML)
 // ==========================================================================
 const searchInput = document.getElementById("search-input");
 const clearSearchBtn = document.getElementById("clear-search");
-const btnAddLink = document.getElementById("btn-add-link");
-const btnEmptyAdd = document.getElementById("btn-empty-add");
 const sortSelect = document.getElementById("sort-select");
-
-// Modales
-const linkModal = document.getElementById("link-modal");
-const closeLinkModalBtn = document.getElementById("close-link-modal");
-const linkForm = document.getElementById("link-form");
-const btnCancelLink = document.getElementById("btn-cancel-link");
-
-const categoriesModal = document.getElementById("categories-modal");
-const btnManageCategories = document.getElementById("btn-manage-categories");
-const closeCategoriesModalBtn = document.getElementById("close-categories-modal");
-const addCategoryForm = document.getElementById("add-category-form");
-const newCategoryNameInput = document.getElementById("new-category-name");
-
-// Modal de confirmación de eliminación
-const confirmModal = document.getElementById("confirm-modal");
-const closeConfirmModalBtn = document.getElementById("close-confirm-modal");
-const btnCancelConfirm = document.getElementById("btn-cancel-confirm");
-const btnAcceptConfirm = document.getElementById("btn-accept-confirm");
 
 // Contenedores dinámicos
 const categoriesContainer = document.getElementById("categories-container");
-const selectCategoryDropdown = document.getElementById("select-category");
-const manageCategoriesList = document.getElementById("manage-categories-list");
 const linksGrid = document.getElementById("links-grid");
 const emptyState = document.getElementById("empty-state");
 
@@ -146,34 +152,11 @@ function showToast(message, type = "success") {
 // ==========================================================================
 // FUNCIONES AUXILIARES
 // ==========================================================================
-// Guarda el estado actual en la memoria del navegador (localStorage)
-function saveToStorage() {
-    localStorage.setItem("eskay_categories", JSON.stringify(categories));
-    localStorage.setItem("eskay_links", JSON.stringify(links));
-}
 
 // Devuelve el icono de Font Awesome correspondiente, validando que esté permitido
 function getIconClass(iconName) {
     const validIcons = ["gamepad", "screwdriver-wrench", "download", "shield-halved", "compact-disc", "code", "file-zipper", "gear"];
     return validIcons.includes(iconName) ? iconName : "download";
-}
-
-// Asegura que las URLs tengan protocolo correcto
-function formatUrl(url) {
-    if (!url.startsWith("http://") && !url.startsWith("https://")) {
-        url = "https://" + url;
-    }
-    return url;
-}
-
-// Comprueba si la URL ingresada es válida
-function isValidUrl(url) {
-    try {
-        new URL(formatUrl(url));
-        return true;
-    } catch (e) {
-        return false;
-    }
 }
 
 // ==========================================================================
@@ -195,9 +178,9 @@ function updateDashboardStats() {
     statOthersCount.textContent = others;
 }
 
-// Dibuja las categorías en la barra lateral y los desplegables de los formularios
+// Dibuja las categorías en la barra lateral
 function renderCategories() {
-    // 1. Limpiar lista de la barra lateral
+    // Limpiar lista de la barra lateral
     categoriesContainer.innerHTML = "";
 
     // Crear el elemento estático "Todos"
@@ -234,30 +217,6 @@ function renderCategories() {
         `;
         item.addEventListener("click", () => filterByCategory(cat));
         categoriesContainer.appendChild(item);
-    });
-
-    // 2. Poblar el menú desplegable del formulario de Enlaces
-    selectCategoryDropdown.innerHTML = "";
-    categories.forEach(cat => {
-        const option = document.createElement("option");
-        option.value = cat;
-        option.textContent = cat;
-        selectCategoryDropdown.appendChild(option);
-    });
-
-    // 3. Renderizar la lista de gestión en el modal de categorías
-    manageCategoriesList.innerHTML = "";
-    categories.forEach(cat => {
-        const item = document.createElement("div");
-        item.className = "category-manage-item";
-
-        item.innerHTML = `
-            <span>${cat}</span>
-            <button class="btn-icon btn-sm btn-danger" onclick="deleteCategory('${cat}')" title="Eliminar Categoría">
-                <i class="fa-solid fa-trash-can"></i>
-            </button>
-        `;
-        manageCategoriesList.appendChild(item);
     });
 }
 
@@ -313,20 +272,6 @@ function renderLinks() {
                 <div class="card-icon-box">
                     <i class="fa-solid fa-${iconName}"></i>
                 </div>
-                <!-- Menú contextual para editar o eliminar -->
-                <div class="card-actions-menu">
-                    <button class="btn-icon dropdown-trigger" data-id="${link.id}">
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
-                    </button>
-                    <div class="dropdown-menu" id="dropdown-${link.id}">
-                        <button class="dropdown-item edit-trigger" data-id="${link.id}">
-                            <i class="fa-solid fa-pen"></i> Editar
-                        </button>
-                        <button class="dropdown-item delete-item delete-trigger" data-id="${link.id}">
-                            <i class="fa-solid fa-trash-can"></i> Eliminar
-                        </button>
-                    </div>
-                </div>
             </div>
             <div class="card-content">
                 <div class="card-tags">
@@ -349,39 +294,6 @@ function renderLinks() {
 
         linksGrid.appendChild(card);
     });
-
-}
-
-// Los eventos de las tarjetas se manejan mediante delegación de eventos en el init()
-
-// Cerrar los dropdowns si hacemos click en cualquier parte libre de la página
-document.addEventListener("click", () => {
-    closeActiveDropdown();
-});
-
-// Controla si se abre o se cierra el menú de opciones de una tarjeta
-function toggleDropdown(id) {
-    if (activeDropdownId === id) {
-        closeActiveDropdown();
-    } else {
-        closeActiveDropdown();
-        const dd = document.getElementById(`dropdown-${id}`);
-        if (dd) {
-            dd.classList.add("show");
-            activeDropdownId = id;
-        }
-    }
-}
-
-// Cierra cualquier dropdown abierto
-function closeActiveDropdown() {
-    if (activeDropdownId) {
-        const dd = document.getElementById(`dropdown-${activeDropdownId}`);
-        if (dd) {
-            dd.classList.remove("show");
-        }
-        activeDropdownId = null;
-    }
 }
 
 // ==========================================
@@ -401,61 +313,6 @@ function filterByCategory(category) {
 
     renderCategories();
     renderLinks();
-}
-
-// Borra un enlace por ID
-function deleteLink(id) {
-    links = links.filter(link => link.id !== id);
-    saveToStorage();
-    updateDashboardStats();
-    renderCategories();
-    renderLinks();
-    showToast("Enlace eliminado correctamente", "info");
-}
-
-// Abre el modal de confirmación de eliminación
-function openConfirmDeleteModal(id) {
-    linkIdToDelete = id;
-    confirmModal.classList.add("open");
-}
-
-// Cierra el modal de confirmación de eliminación
-function closeConfirmDeleteModal() {
-    confirmModal.classList.remove("open");
-    linkIdToDelete = null;
-}
-
-// Borra una categoría
-function deleteCategory(catName) {
-    // Advertir si hay links usando esta categoría
-    const matches = links.filter(link => link.category === catName);
-    if (matches.length > 0) {
-        if (!confirm(`Hay ${matches.length} enlace(s) en esta categoría. Si la eliminas, esos enlaces se moverán a la categoría 'Otros'. ¿Deseas continuar?`)) {
-            return;
-        }
-        // Asignamos la categoría "Otros" a los enlaces huérfanos
-        links = links.map(link => {
-            if (link.category === catName) {
-                return { ...link, category: "Otros" };
-            }
-            return link;
-        });
-    }
-
-    // Filtramos la lista de categorías
-    categories = categories.filter(c => c !== catName);
-
-    // Si la categoría eliminada era la seleccionada, resetear filtro a "Todos"
-    if (currentCategoryFilter === catName) {
-        currentCategoryFilter = "all";
-        activeCategoryTitle.textContent = "Todos los Enlaces";
-    }
-
-    saveToStorage();
-    updateDashboardStats();
-    renderCategories();
-    renderLinks();
-    showToast(`Categoría "${catName}" eliminada`, "info");
 }
 
 // ==========================================================================
@@ -496,186 +353,6 @@ function fallbackCopyToClipboard(text) {
 }
 
 // ==========================================================================
-// APERTURA Y CIERRE DE FORMULARIOS EMERGENTES (Modales)
-// ==========================================================================
-
-// Prepara y abre el modal para Agregar un Enlace nuevo
-function openAddLinkModal() {
-    document.getElementById("modal-title").textContent = "Añadir Nuevo Enlace";
-    document.getElementById("link-id").value = ""; // ID vacío significa "Creación"
-    linkForm.reset();
-
-    // Seleccionar icono gamepad por defecto
-    const defaultRadio = document.querySelector('input[name="icon-choice"][value="gamepad"]');
-    if (defaultRadio) defaultRadio.checked = true;
-
-    // Selecciona por defecto la categoría en la que estamos navegando
-    if (currentCategoryFilter !== "all" && categories.includes(currentCategoryFilter)) {
-        selectCategoryDropdown.value = currentCategoryFilter;
-    } else if (categories.length > 0) {
-        selectCategoryDropdown.value = categories[0];
-    }
-
-    linkModal.classList.add("open");
-}
-
-// Carga los datos del enlace correspondiente y abre el modal para Editar
-function openEditLinkModal(id) {
-    const link = links.find(l => l.id === id);
-    if (!link) return;
-
-    document.getElementById("modal-title").textContent = "Editar Enlace";
-    document.getElementById("link-id").value = link.id;
-    document.getElementById("input-title").value = link.title;
-    document.getElementById("input-url").value = link.url;
-    document.getElementById("select-category").value = link.category;
-    document.getElementById("input-size").value = link.size || "";
-    document.getElementById("input-description").value = link.description || "";
-
-    // Marca el botón de opción del icono que tenía asignado
-    const radio = document.querySelector(`input[name="icon-choice"][value="${link.icon || 'download'}"]`);
-    if (radio) {
-        radio.checked = true;
-    } else {
-        const fallbackRadio = document.querySelector('input[name="icon-choice"][value="download"]');
-        if (fallbackRadio) fallbackRadio.checked = true;
-    }
-
-    linkModal.classList.add("open");
-}
-
-// Cierra el modal de enlaces
-function closeLinkModal() {
-    linkModal.classList.remove("open");
-}
-
-// Escuchas para los botones de control del modal
-btnAddLink.addEventListener("click", openAddLinkModal);
-btnEmptyAdd.addEventListener("click", openAddLinkModal);
-closeLinkModalBtn.addEventListener("click", closeLinkModal);
-btnCancelLink.addEventListener("click", closeLinkModal);
-
-// Procesar el envío del Formulario de Enlaces (Guardar / Actualizar)
-linkForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const id = document.getElementById("link-id").value;
-    const title = document.getElementById("input-title").value.trim();
-    const rawUrl = document.getElementById("input-url").value.trim();
-    const category = document.getElementById("select-category").value;
-    const size = document.getElementById("input-size").value.trim();
-    const description = document.getElementById("input-description").value.trim();
-
-    // Obtener valor del icono marcado
-    const checkedRadio = document.querySelector('input[name="icon-choice"]:checked');
-    const icon = checkedRadio ? checkedRadio.value : "download";
-
-    const formattedUrl = formatUrl(rawUrl);
-
-    // Validación de seguridad de enlace
-    if (!isValidUrl(formattedUrl)) {
-        showToast("Introduce un enlace válido (Ej: https://...)", "error");
-        return;
-    }
-
-    if (id) {
-        // EDICIÓN: Actualizamos el registro correspondiente en la lista
-        links = links.map(link => {
-            if (link.id === id) {
-                return {
-                    ...link,
-                    title,
-                    url: formattedUrl,
-                    category,
-                    size,
-                    description,
-                    icon
-                };
-            }
-            return link;
-        });
-        showToast("Enlace actualizado correctamente");
-    } else {
-        // CREACIÓN: Insertamos un nuevo registro al inicio
-        const newLink = {
-            id: 'link_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
-            title,
-            url: formattedUrl,
-            category,
-            size,
-            description,
-            icon,
-            createdAt: Date.now()
-        };
-        links.unshift(newLink);
-        showToast("Enlace añadido exitosamente");
-    }
-
-    // Guardar en la base de datos local y re-renderizar todo
-    saveToStorage();
-    closeLinkModal();
-    updateDashboardStats();
-    renderCategories();
-    renderLinks();
-});
-
-// Modal de gestión de categorías
-btnManageCategories.addEventListener("click", () => {
-    categoriesModal.classList.add("open");
-});
-
-closeCategoriesModalBtn.addEventListener("click", () => {
-    categoriesModal.classList.remove("open");
-});
-
-// Formulario de agregar nueva categoría
-addCategoryForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const newCat = newCategoryNameInput.value.trim();
-
-    if (!newCat) return;
-
-    // Normalizar la primera letra en mayúscula
-    const normalizedNewCat = newCat.charAt(0).toUpperCase() + newCat.slice(1);
-
-    // Evitar nombres duplicados
-    if (categories.some(c => c.toLowerCase() === normalizedNewCat.toLowerCase())) {
-        showToast("Esta categoría ya existe", "error");
-        return;
-    }
-
-    categories.push(normalizedNewCat);
-    saveToStorage();
-    newCategoryNameInput.value = "";
-
-    renderCategories();
-    showToast(`Categoría "${normalizedNewCat}" creada`);
-});
-
-// Cerrar modales si hacemos click por fuera de la tarjeta modal
-window.addEventListener("click", (e) => {
-    if (e.target === linkModal) {
-        closeLinkModal();
-    }
-    if (e.target === categoriesModal) {
-        categoriesModal.classList.remove("open");
-    }
-    if (e.target === confirmModal) {
-        closeConfirmDeleteModal();
-    }
-});
-
-// Escuchas para el modal de confirmación de eliminación
-closeConfirmModalBtn.addEventListener("click", closeConfirmDeleteModal);
-btnCancelConfirm.addEventListener("click", closeConfirmDeleteModal);
-btnAcceptConfirm.addEventListener("click", () => {
-    if (linkIdToDelete) {
-        deleteLink(linkIdToDelete);
-        closeConfirmDeleteModal();
-    }
-});
-
-// ==========================================================================
 // FUNCIONES DE BÚSQUEDA Y ORDENAMIENTO EN TIEMPO REAL
 // ==========================================================================
 searchInput.addEventListener("input", (e) => {
@@ -709,52 +386,13 @@ sortSelect.addEventListener("change", (e) => {
 // INICIALIZACIÓN DE LA APLICACIÓN al abrir la página
 // ==========================================================================
 function init() {
-    // Si no existen los objetos en localStorage, los inicializamos
-    if (!localStorage.getItem("eskay_categories")) {
-        localStorage.setItem("eskay_categories", JSON.stringify(DEFAULT_CATEGORIES));
-    }
-    if (!localStorage.getItem("eskay_links")) {
-        localStorage.setItem("eskay_links", JSON.stringify(DEFAULT_LINKS));
-    }
-
-    // Delegación de eventos para la cuadrícula de tarjetas
+    // Delegación de eventos para la cuadrícula de tarjetas (Copiar enlace)
     linksGrid.addEventListener("click", (e) => {
-        // Clic en dropdown trigger (tres puntos)
-        const dropdownTrigger = e.target.closest(".dropdown-trigger");
-        if (dropdownTrigger) {
-            e.stopPropagation();
-            const id = dropdownTrigger.dataset.id;
-            toggleDropdown(id);
-            return;
-        }
-
-        // Clic en "Editar" enlace
-        const editBtn = e.target.closest(".edit-trigger");
-        if (editBtn) {
-            e.stopPropagation();
-            const id = editBtn.dataset.id;
-            closeActiveDropdown();
-            openEditLinkModal(id);
-            return;
-        }
-
-        // Clic en "Eliminar" enlace
-        const deleteBtn = e.target.closest(".delete-trigger");
-        if (deleteBtn) {
-            e.stopPropagation();
-            const id = deleteBtn.dataset.id;
-            closeActiveDropdown();
-            openConfirmDeleteModal(id);
-            return;
-        }
-
-        // Clic en "Copiar" enlace
         const copyBtn = e.target.closest(".btn-copy");
         if (copyBtn) {
             e.stopPropagation();
             const url = copyBtn.dataset.url;
             copyToClipboard(url);
-            return;
         }
     });
 
@@ -765,6 +403,3 @@ function init() {
 
 // Iniciar aplicación
 init();
-
-// Exportación global de deleteCategory para que los botones inline creados dinámicamente funcionen
-window.deleteCategory = deleteCategory;

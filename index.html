@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Repositorio</title>
+    <title>Repositorio de ESKAY</title>
 
     <!-- Fuentes de Google: Outfit (Tipografía moderna y premium) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,12 +51,6 @@
                 </div>
             </div>
 
-            <!-- Acción principal: Añadir Enlace -->
-            <div class="header-actions">
-                <button id="btn-add-link" class="btn btn-primary">
-                    <i class="fa-solid fa-plus"></i> Añadir Enlace
-                </button>
-            </div>
         </header>
 
         <!-- PANEL DE ESTADÍSTICAS (Dashboard Stats) -->
@@ -111,10 +105,6 @@
                 <div class="sidebar-box">
                     <div class="sidebar-header">
                         <h2>Categorías</h2>
-                        <!-- Botón para abrir el gestor de categorías -->
-                        <button id="btn-manage-categories" class="btn-icon" title="Gestionar Categorías">
-                            <i class="fa-solid fa-gear"></i>
-                        </button>
                     </div>
                     <!-- Lista de categorías dinámicas cargadas por JS -->
                     <ul class="categories-list" id="categories-container">
@@ -146,8 +136,7 @@
                         <i class="fa-solid fa-folder-open"></i>
                     </div>
                     <h3>No se encontraron enlaces</h3>
-                    <p>Comienza agregando enlaces de Mediafire a tu repositorio o ajusta tus filtros de búsqueda.</p>
-                    <button id="btn-empty-add" class="btn btn-primary">Añadir Mi Primer Enlace</button>
+                    <p>Ajusta tus filtros de búsqueda o categoría en la barra lateral.</p>
                 </div>
 
                 <!-- Cuadrícula (Grid) donde se renderizan las tarjetas de enlaces -->
@@ -158,148 +147,7 @@
         </div>
     </div>
 
-    <!-- MODAL: AÑADIR / EDITAR ENLACE (Formulario emergente) -->
-    <div class="modal-overlay" id="link-modal">
-        <div class="modal-card">
-            <div class="modal-header">
-                <h2 id="modal-title">Añadir Nuevo Enlace</h2>
-                <button class="modal-close btn-icon" id="close-link-modal">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-            <form id="link-form" class="modal-body">
-                <!-- ID oculto para saber si estamos editando o creando uno nuevo -->
-                <input type="hidden" id="link-id">
 
-                <!-- Título del enlace -->
-                <div class="form-group">
-                    <label for="input-title">Título del Archivo *</label>
-                    <input type="text" id="input-title" required
-                        placeholder="Ej. GTA San Andreas Portable, WinRAR Full">
-                </div>
-
-                <!-- Enlace URL de Mediafire -->
-                <div class="form-group">
-                    <label for="input-url">Enlace de Descarga *</label>
-                    <div class="url-input-wrapper">
-                        <i class="fa-solid fa-link input-prefix-icon"></i>
-                        <input type="url" id="input-url" required
-                            placeholder="Ej: https://www.mediafire.com/... o https://mega.nz/...">
-                    </div>
-                </div>
-
-                <!-- Fila mixta: Categoría y Tamaño del archivo -->
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="select-category">Categoría *</label>
-                        <select id="select-category" required>
-                            <!-- Opciones cargadas dinámicamente con JavaScript -->
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="input-size">Tamaño del archivo (Opcional)</label>
-                        <input type="text" id="input-size" placeholder="Ej. 1.2 GB, 15 MB">
-                    </div>
-                </div>
-
-                <!-- Descripción del enlace (Notas adicionales, contraseñas, etc.) -->
-                <div class="form-group">
-                    <label for="input-description">Descripción / Notas (Opcional)</label>
-                    <textarea id="input-description" rows="3"
-                        placeholder="Información del juego, instrucciones de instalación, contraseña del rar, etc."></textarea>
-                </div>
-
-                <!-- Selector de icono visual para la tarjeta -->
-                <div class="form-group">
-                    <label>Elegir Icono Visual</label>
-                    <div class="icon-picker">
-                        <label class="icon-option">
-                            <input type="radio" name="icon-choice" value="gamepad" checked>
-                            <span class="icon-preview"><i class="fa-solid fa-gamepad"></i></span>
-                        </label>
-                        <label class="icon-option">
-                            <input type="radio" name="icon-choice" value="screwdriver-wrench">
-                            <span class="icon-preview"><i class="fa-solid fa-screwdriver-wrench"></i></span>
-                        </label>
-                        <label class="icon-option">
-                            <input type="radio" name="icon-choice" value="download">
-                            <span class="icon-preview"><i class="fa-solid fa-download"></i></span>
-                        </label>
-                        <label class="icon-option">
-                            <input type="radio" name="icon-choice" value="shield-halved">
-                            <span class="icon-preview"><i class="fa-solid fa-shield-halved"></i></span>
-                        </label>
-                        <label class="icon-option">
-                            <input type="radio" name="icon-choice" value="compact-disc">
-                            <span class="icon-preview"><i class="fa-solid fa-compact-disc"></i></span>
-                        </label>
-                        <label class="icon-option">
-                            <input type="radio" name="icon-choice" value="code">
-                            <span class="icon-preview"><i class="fa-solid fa-code"></i></span>
-                        </label>
-                        <label class="icon-option">
-                            <input type="radio" name="icon-choice" value="file-zipper">
-                            <span class="icon-preview"><i class="fa-solid fa-file-zipper"></i></span>
-                        </label>
-                        <label class="icon-option">
-                            <input type="radio" name="icon-choice" value="gear">
-                            <span class="icon-preview"><i class="fa-solid fa-gear"></i></span>
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Botones del pie de modal -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" id="btn-cancel-link">Cancelar</button>
-                    <button type="submit" class="btn btn-primary" id="btn-save-link">Guardar Enlace</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <!-- MODAL: GESTIONAR CATEGORÍAS (Ventana pequeña para añadir/quitar categorías) -->
-    <div class="modal-overlay" id="categories-modal">
-        <div class="modal-card modal-card-small">
-            <div class="modal-header">
-                <h2>Gestionar Categorías</h2>
-                <button class="modal-close btn-icon" id="close-categories-modal">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <!-- Formulario rápido para agregar nueva categoría -->
-                <form id="add-category-form" class="category-add-row">
-                    <input type="text" id="new-category-name" required placeholder="Nueva Categoría (Ej. Emuladores)"
-                        maxlength="20">
-                    <button type="submit" class="btn btn-primary btn-sm">Añadir</button>
-                </form>
-                <!-- Contenedor con scroll para ver y eliminar categorías -->
-                <div class="categories-manage-list" id="manage-categories-list">
-                    <!-- Se inserta aquí dinámicamente con JavaScript -->
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL: CONFIRMACIÓN DE ELIMINACIÓN -->
-    <div class="modal-overlay" id="confirm-modal">
-        <div class="modal-card modal-card-small">
-            <div class="modal-header">
-                <h2>¿Eliminar Enlace?</h2>
-                <button class="modal-close btn-icon" id="close-confirm-modal">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.5;">¿Estás seguro de que deseas
-                    eliminar este enlace? Esta acción no se puede deshacer y el enlace se perderá permanentemente.</p>
-                <div class="modal-footer" style="margin-top: 1rem;">
-                    <button type="button" class="btn btn-secondary" id="btn-cancel-confirm">Cancelar</button>
-                    <button type="button" class="btn btn-danger" id="btn-accept-confirm">Eliminar</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Contenedor flotante para notificaciones emergentes (Toasts) -->
     <div id="toast-container" class="toast-container"></div>

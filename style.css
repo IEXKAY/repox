@@ -1142,15 +1142,6 @@ h1, h2, h3, h4 {
         max-width: 100%;
     }
     
-    .header-actions {
-        display: flex;
-        justify-content: center;
-    }
-    
-    .btn-primary {
-        width: 100%;
-    }
-    
     .form-row {
         grid-template-columns: 1fr;
     }

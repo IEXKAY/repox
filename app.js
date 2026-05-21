@@ -51,12 +51,22 @@ const DEFAULT_LINKS = [
     {
         id: "mock-5",
         title: "ChotOS 10 22H2",
-        url: "https://www.mediafire.com/file/57cbwvz689sekxn",
+        url: "https://download2390.mediafire.com/1k1er9r9ghpgUj7qkfnh4z-ZBjlHDOPMWxrb_jNngAEN6vONnNMU2PjuVC1G9apjALS0CgoLc1i-wioQPfnT9BO-1HQxkHX2XsGEnQm9DzqvGuz_jL2jepphNvGhihVPQeSkfCoyAfWye2NacwsWx5JpGVtZR-rmJjCte24P9OdY/57cbwvz689sekxn/ChotOS+10+22H2.iso",
         category: "Otros",
         size: "1.3 GB",
         description: "ISO Tomex",
         icon: "compact-disc",
         createdAt: Date.now() - 3600000 * 24 * 10 // Hace 10 días
+    },
+    {
+        id: "mock-6-1",
+        title: "CachyOS",
+        url: "https://cdn77.cachyos.org/ISO/desktop/260426/cachyos-desktop-linux-260426.iso",
+        category: "Otros",
+        size: "2.9 GB",
+        description: "Linux CachyOS",
+        icon: "compact-disc",
+        createdAt: Date.now()
     },
     {
         id: "mock-6",

@@ -10,43 +10,43 @@ const DEFAULT_CATEGORIES = ["Gaming", "Herramientas", "Otros"];
 const DEFAULT_LINKS = [
     {
         id: "mock-1",
-        title: "Minecraft Portable 1.20.1",
-        url: "https://www.mediafire.com/file/mock-mc120/Minecraft_Portable_1.20.1.zip/file",
+        title: "Forza Horizon 5 ",
+        url: "https://store5.gofile.io/download/web/e5f71859-9dfc-400d-b654-7df8316230f1/Forza%20Horizon%205%20Opti.7z",
         category: "Gaming",
-        size: "185 MB",
-        description: "Versión portable del popular juego sandbox. No requiere instalación, incluye launcher premium/no-premium. Solo extraer y jugar.",
+        size: "89.0 GB",
+        description: "Es un juego de carreras de mundo abierto desarrollado por Playground Games",
         icon: "gamepad",
-        createdAt: Date.now() - 3600000 * 24 * 5 // Hace 5 días
+        createdAt: Date.now()
     },
     {
         id: "mock-2",
-        title: "GTA San Andreas Lite Español",
-        url: "https://www.mediafire.com/file/mock-gtasa/GTA_San_Andreas_Lite_ES.rar/file",
+        title: "Grand Theft Auto: San Andreas",
+        url: "https://download2332.mediafire.com/a92ber34hnggS3VPTiyQT6fpWs7IF7caxiU3ZYyVypuJUJjv3ozm2_2npodow0P689GZ_MQohhxtzAKUavuo8-kquq_xa2zwGlKrq0F1fOT-nyKoMfKvQ0N5lzNl_HAjNx7IJzWB1rSXrSbonZsSvbaNdlz3YVEuYmJeiCvYFaEV/0iddf1zy4jyyww4/GTA+SA+Opti+V3.1.7z",
         category: "Gaming",
-        size: "620 MB",
+        size: "3 GB",
         description: "El clásico GTA San Andreas comprimido y optimizado para PCs de bajo recursos. Idioma español, audios de misiones comprimidos.",
         icon: "gamepad",
-        createdAt: Date.now() - 3600000 * 24 * 3 // Hace 3 días
+        createdAt: Date.now()
     },
     {
         id: "mock-3",
-        title: "WinRAR v6.22 Full Español (x64)",
-        url: "https://www.mediafire.com/file/mock-winrar/WinRAR_6.22_x64_Full_ES.exe/file",
+        title: "Microsoft Activation Scripts | MAS",
+        url: "https://dev.azure.com/massgrave/Microsoft-Activation-Scripts/_apis/git/repositories/Microsoft-Activation-Scripts/items?path=/MAS/All-In-One-Version-KL/MAS_AIO.cmd&download=true",
         category: "Herramientas",
-        size: "8.2 MB",
-        description: "Compresor y descompresor de archivos de alto rendimiento. Activación automática incluida. Versión de 64 bits.",
-        icon: "file-zipper",
-        createdAt: Date.now() - 3600000 * 12 // Hace 12 horas
+        size: "1.2 KB",
+        description: "irm https://get.activated.win | iex",
+        icon: "gear",
+        createdAt: Date.now()
     },
     {
         id: "mock-4",
-        title: "CCleaner Professional v6.15",
-        url: "https://www.mediafire.com/file/mock-cclean/CCleaner_Pro_v6.15_Pre-Activated.rar/file",
+        title: "Driver Booster",
+        url: "https://download2361.mediafire.com/jtq13r08tbeg6hPo2UW_nkawbdWyLPh5FQAB_e4Vuzs7i8XLrETC9569MKBxeNI_smZjnng284csb0HCfMPeZxlmrNUGEZdlvRJ4PnSRGtRVnqYyFRILZOu2EvaVycYAIgbPgLEXhAMy5p7dKBB-5qph12zIWLdKLQTJZ1m9cyad/o547i07igt8wcy1/DriverBooster.7z",
         category: "Herramientas",
-        size: "45 MB",
-        description: "Herramienta definitiva para optimizar el sistema, limpiar el registro y desinstalar programas de forma segura. Pre-activado.",
+        size: "21.37 MB",
+        description: "Es un programa que descargar e instalar automáticamente los controladores faltantes o desactualizados de tu computadora",
         icon: "screwdriver-wrench",
-        createdAt: Date.now() - 3600000 * 2 // Hace 2 horas
+        createdAt: Date.now()
     },
     {
         id: "mock-5",
@@ -55,7 +55,7 @@ const DEFAULT_LINKS = [
         category: "Otros",
         size: "1.3 GB",
         description: "ISO Tomex",
-        icon: "download",
+        icon: "compact-disc",
         createdAt: Date.now() - 3600000 * 24 * 10 // Hace 10 días
     },
     {
@@ -69,12 +69,12 @@ const DEFAULT_LINKS = [
         createdAt: Date.now()
     },
     {
-        id: "mi-juego-1",
-        title: "Aquí pones el título de tu juego",
-        url: "https://www.mediafire.com/file/tu-link-real",
+        id: "mock-7",
+        title: "Euro Truck Simulator 2 ",
+        url: "https://download2430.mediafire.com/r89avxwap5ugm-jgF9siuwkC-S-jH_SxiVeGLptpRmhYwG7sbvlwOWgjK-1ebDzbotURbfzNHjLFF0ffbfoV5KV6JGuOxcQlUcsJHvnnrAvAzKixYYLm9hoWujJ0hKQzUrtYnx0v4BDXRbwQkoCvuMUP4yfuutAII98pi1NEwcuf/h1a7szc5qrzl53j/Euro+Truck+Simulator+2+Opti.7z",
         category: "Gaming",
-        size: "350 MB",
-        description: "Tu descripción personalizada de lo que hace el archivo.",
+        size: "3.09 GB",
+        description: "Version optimizada",
         icon: "gamepad",
         createdAt: Date.now()
     },
@@ -85,7 +85,7 @@ const DEFAULT_LINKS = [
         category: "Herramientas",
         size: "1 MB",
         description: "Descomprimir",
-        icon: "screwdriver-wrench",
+        icon: "file-zipper",
         createdAt: Date.now()
     }
 ];

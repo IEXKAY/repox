@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REPOX | ESKAY</title>
+    <title>REPOX</title>
 
     <!-- Fuentes de Google: Outfit (Tipografía moderna y premium) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,23 +20,25 @@
 </head>
 
 <body>
-    <!-- Efecto visual de fondo: Círculos brillantes difuminados (Glows) -->
-    <div class="bg-glow bg-glow-1"></div>
-    <div class="bg-glow bg-glow-2"></div>
-    <div class="bg-glow bg-glow-3"></div>
+    <!-- Contenedor para efectos visuales de fondo (Evita desbordes horizontales en celular) -->
+    <div class="bg-glow-container">
+        <div class="bg-glow bg-glow-1"></div>
+        <div class="bg-glow bg-glow-2"></div>
+        <div class="bg-glow bg-glow-3"></div>
+    </div>
 
     <!-- Contenedor principal de la aplicación -->
     <div class="app-container">
 
         <!-- CABECERA (Header): Logo, Barra de Búsqueda y Botón de Añadir Enlace -->
         <header class="app-header">
-            <!-- Logotipo y Nombre del Sitio -->
             <div class="header-logo">
                 <div class="logo-icon">
-                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <i class="fa-solid fa-folder"></i>
                 </div>
                 <div class="logo-text">
-                    <p>Explora, gestiona y descarga contenido optimizado.</p>
+                    <h1>REPOX | ESKAY</h1>
+                    <span>Explora, gestiona y descarga contenido optimizado.</span>
                 </div>
             </div>
 
@@ -44,7 +46,7 @@
             <div class="header-search">
                 <div class="search-box">
                     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                    <input type="text" id="search-input" placeholder="Buscar juegos, herramientas, ISO...">
+                    <input type="text" id="search-input" placeholder="Buscar por titulo o descripción...">
                     <button id="clear-search" class="clear-btn" style="display: none;">
                         <i class="fa-solid fa-xmark"></i>
                     </button>

@@ -41,7 +41,7 @@ const DEFAULT_LINKS = [
     {
         id: "mock-4",
         title: "Driver Booster",
-        url: "https://download2361.mediafire.com/jtq13r08tbeg6hPo2UW_nkawbdWyLPh5FQAB_e4Vuzs7i8XLrETC9569MKBxeNI_smZjnng284csb0HCfMPeZxlmrNUGEZdlvRJ4PnSRGtRVnqYyFRILZOu2EvaVycYAIgbPgLEXhAMy5p7dKBB-5qph12zIWLdKLQTJZ1m9cyad/o547i07igt8wcy1/DriverBooster.7z",
+        url: "https://download2361.mediafire.com/j7m3ruk0g4pg9QyJvUwoleJUxe2dk0PkqPQURowf5pPhtzyX5W4rQRAnVR2yvk9_ZdUudqS6Qy8n11zpA_KzCsJI2m5rCJAN1zsYE3CwOWVBBc8yLapdK1TCFE9T--B9PVfhyQj3ez0U1kKQrYsvhZGjqT6MCz3z68ir2_FG7UWU/o547i07igt8wcy1/DriverBooster.7z",
         category: "Herramientas",
         size: "21.37 MB",
         description: "Es un programa que descargar e instalar automáticamente los controladores faltantes o desactualizados de tu computadora",
@@ -71,7 +71,7 @@ const DEFAULT_LINKS = [
     {
         id: "mock-6",
         title: "HDD Low Level Format Tool",
-        url: "https://download2391.mediafire.com/riyeir973ijgh3RmnZHJh4v6RauW-8hgprp3jqEzr6hS8d_m2LvBjRxACua4b5d5Rwz63A1onYkA5UDqCxqs1rCyzwscHN_7PuGANLeh439yZBsH-hWgUz-QVuC39r0RsYGQppBmxlIQ4KE10xk9-XwidNkPRgB8LJwvR-41mV8e/12q163k1rmbz1n5/HDD+Low+Level+Format.EXE",
+        url: "https://download2391.mediafire.com/ziawyxncqfvgdzmuwB0SvMHm_4sLC7AJ7rqAyoFZUQJ5w3D_x_hV_6IEFZrnl5rQT79_SIH2tk9qjjYWZzUWmV9uC-5Uy--59WdqmM4_AKe77PKRIpZy2AFqr-cvM-sXPIMGFMf7z9cxQkTcvvxMjD1kI_zV7v-EsNRJMC3Ej_CE/12q163k1rmbz1n5/HDD+Low+Level+Format.EXE",
         category: "Herramientas",
         size: "1.95 MB",
         description: "Formateo Lento",

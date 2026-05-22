@@ -20,66 +20,6 @@ const DEFAULT_LINKS = [
     },
     {
         id: "mock-2",
-        title: "Grand Theft Auto: San Andreas",
-        url: "https://download2332.mediafire.com/a92ber34hnggS3VPTiyQT6fpWs7IF7caxiU3ZYyVypuJUJjv3ozm2_2npodow0P689GZ_MQohhxtzAKUavuo8-kquq_xa2zwGlKrq0F1fOT-nyKoMfKvQ0N5lzNl_HAjNx7IJzWB1rSXrSbonZsSvbaNdlz3YVEuYmJeiCvYFaEV/0iddf1zy4jyyww4/GTA+SA+Opti+V3.1.7z",
-        category: "Gaming",
-        size: "3 GB",
-        description: "El clásico GTA San Andreas comprimido y optimizado para PCs de bajo recursos. Idioma español, audios de misiones comprimidos.",
-        icon: "gamepad",
-        createdAt: Date.now()
-    },
-    {
-        id: "mock-3",
-        title: "Microsoft Activation Scripts | MAS",
-        url: "https://dev.azure.com/massgrave/Microsoft-Activation-Scripts/_apis/git/repositories/Microsoft-Activation-Scripts/items?path=/MAS/All-In-One-Version-KL/MAS_AIO.cmd&download=true",
-        category: "Herramientas",
-        size: "1.2 KB",
-        description: "irm https://get.activated.win | iex",
-        icon: "gear",
-        createdAt: Date.now()
-    },
-    {
-        id: "mock-4",
-        title: "Driver Booster",
-        url: "https://download2361.mediafire.com/j7m3ruk0g4pg9QyJvUwoleJUxe2dk0PkqPQURowf5pPhtzyX5W4rQRAnVR2yvk9_ZdUudqS6Qy8n11zpA_KzCsJI2m5rCJAN1zsYE3CwOWVBBc8yLapdK1TCFE9T--B9PVfhyQj3ez0U1kKQrYsvhZGjqT6MCz3z68ir2_FG7UWU/o547i07igt8wcy1/DriverBooster.7z",
-        category: "Herramientas",
-        size: "21.37 MB",
-        description: "Es un programa que descargar e instalar automáticamente los controladores faltantes o desactualizados de tu computadora",
-        icon: "screwdriver-wrench",
-        createdAt: Date.now()
-    },
-    {
-        id: "mock-5",
-        title: "ChotOS 10 22H2",
-        url: "https://download2390.mediafire.com/1k1er9r9ghpgUj7qkfnh4z-ZBjlHDOPMWxrb_jNngAEN6vONnNMU2PjuVC1G9apjALS0CgoLc1i-wioQPfnT9BO-1HQxkHX2XsGEnQm9DzqvGuz_jL2jepphNvGhihVPQeSkfCoyAfWye2NacwsWx5JpGVtZR-rmJjCte24P9OdY/57cbwvz689sekxn/ChotOS+10+22H2.iso",
-        category: "Otros",
-        size: "1.3 GB",
-        description: "ISO Tomex",
-        icon: "compact-disc",
-        createdAt: Date.now() - 3600000 * 24 * 10 // Hace 10 días
-    },
-    {
-        id: "mock-6-1",
-        title: "CachyOS",
-        url: "https://cdn77.cachyos.org/ISO/desktop/260426/cachyos-desktop-linux-260426.iso",
-        category: "Otros",
-        size: "2.9 GB",
-        description: "Linux CachyOS",
-        icon: "compact-disc",
-        createdAt: Date.now()
-    },
-    {
-        id: "mock-6",
-        title: "HDD Low Level Format Tool",
-        url: "https://download2391.mediafire.com/ziawyxncqfvgdzmuwB0SvMHm_4sLC7AJ7rqAyoFZUQJ5w3D_x_hV_6IEFZrnl5rQT79_SIH2tk9qjjYWZzUWmV9uC-5Uy--59WdqmM4_AKe77PKRIpZy2AFqr-cvM-sXPIMGFMf7z9cxQkTcvvxMjD1kI_zV7v-EsNRJMC3Ej_CE/12q163k1rmbz1n5/HDD+Low+Level+Format.EXE",
-        category: "Herramientas",
-        size: "1.95 MB",
-        description: "Formateo Lento",
-        icon: "screwdriver-wrench",
-        createdAt: Date.now()
-    },
-    {
-        id: "mock-7",
         title: "Euro Truck Simulator 2 ",
         url: "https://download2430.mediafire.com/r89avxwap5ugm-jgF9siuwkC-S-jH_SxiVeGLptpRmhYwG7sbvlwOWgjK-1ebDzbotURbfzNHjLFF0ffbfoV5KV6JGuOxcQlUcsJHvnnrAvAzKixYYLm9hoWujJ0hKQzUrtYnx0v4BDXRbwQkoCvuMUP4yfuutAII98pi1NEwcuf/h1a7szc5qrzl53j/Euro+Truck+Simulator+2+Opti.7z",
         category: "Gaming",
@@ -89,7 +29,87 @@ const DEFAULT_LINKS = [
         createdAt: Date.now()
     },
     {
+        id: "mock-3",
+        title: "Grand Theft Auto: San Andreas",
+        url: "https://download2332.mediafire.com/a92ber34hnggS3VPTiyQT6fpWs7IF7caxiU3ZYyVypuJUJjv3ozm2_2npodow0P689GZ_MQohhxtzAKUavuo8-kquq_xa2zwGlKrq0F1fOT-nyKoMfKvQ0N5lzNl_HAjNx7IJzWB1rSXrSbonZsSvbaNdlz3YVEuYmJeiCvYFaEV/0iddf1zy4jyyww4/GTA+SA+Opti+V3.1.7z",
+        category: "Gaming",
+        size: "3 GB",
+        description: "El clásico GTA San Andreas comprimido y optimizado para PCs de bajo recursos. Idioma español, audios de misiones comprimidos.",
+        icon: "gamepad",
+        createdAt: Date.now()
+    },
+    {
+        id: "mock-4",
+        title: "Microsoft Activation Scripts | MAS",
+        url: "https://dev.azure.com/massgrave/Microsoft-Activation-Scripts/_apis/git/repositories/Microsoft-Activation-Scripts/items?path=/MAS/All-In-One-Version-KL/MAS_AIO.cmd&download=true",
+        category: "Herramientas",
+        size: "1.2 KB",
+        description: "irm https://get.activated.win | iex",
+        icon: "gear",
+        createdAt: Date.now()
+    },
+    {
+        id: "mock-5",
+        title: "Ventoy",
+        url: "https://flylife.dl.sourceforge.net/project/ventoy/v1.1.12/ventoy-1.1.12-windows.zip?viasf=1&fid=80ebd7ee9c6be264",
+        category: "Herramientas",
+        size: "15.9 MB",
+        description: "Permite crear una memoria USB booteable con múltiples sistemas operativos (Windows, Linux, etc.)",
+        icon: "gear",
+        createdAt: Date.now()
+    },
+    {
+        id: "mock-6",
+        title: "Rufus Portable",
+        url: "https://github.com/pbatard/rufus/releases/download/v4.14/rufus-4.14p.exe",
+        category: "Herramientas",
+        size: "1.9 MB",
+        description: "Es una herramienta gratuita y muy ligera para Windows que permite crear unidades USB booteables o de arranque",
+        icon: "gear",
+        createdAt: Date.now()
+    },
+    {
+        id: "mock-7",
+        title: "Driver Booster Pro",
+        url: "https://download2361.mediafire.com/4g4nhd7561xgKZxAGOOD_6J-63CWtP5C1_gbQ3McFr7atvKCppBTrxnLVXXe48txmAz2d7_7no6IZBuJu1Q96PzTpRauF5RPMBU9mVfBZp1LTOe_TpwIDsg0fQgKdeSHys-SjM7ZBIqqxiVG7Oz-6DmbnT4uBd3fLfof3zwGSwAv/o547i07igt8wcy1/DriverBooster.7z",
+        category: "Herramientas",
+        size: "21.37 MB",
+        description: "Es un programa que descargar e instalar automáticamente los controladores faltantes o desactualizados de tu computadora",
+        icon: "screwdriver-wrench",
+        createdAt: Date.now()
+    },
+    {
         id: "mock-8",
+        title: "Adobe Acrobat Pro DC",
+        url: "https://cold-na-phx-1.gofile.io/download/web/1b252b7e-d70b-4784-bc6e-191532ced05b/Adobe%20Acrobat%20Pro%20DC%202020.006.20042%20-%20iexkay.rar",
+        category: "Herramientas",
+        size: "689 MB",
+        description: "Version completa de Adobe Acrobat Pro DC 2020.006.20042",
+        icon: "screwdriver-wrench",
+        createdAt: Date.now()
+    },
+    {
+        id: "mock-9",
+        title: "AutoDesk AutoCAD 2022",
+        url: "https://download2281.mediafire.com/byhxa080olzgWOB45h7ZleFovQtUuRPP7uuB3Eu-YhR8ci43fj5mICFkF2L5fxMT8Cse8tvDSSq7wbhiUW-ZvAbQMCWc6A5DVOb-YiwUBBKBbr9SGif1uj0NsTHWqqXutv5VFwJQhuQWYh3OBhanzLiF0YqhHz0lyvOhAS2JTy4B/n2xrns8syk9fu8f/AutoDesk+AutoCAD+2022.7z",
+        category: "Herramientas",
+        size: "1.73 GB",
+        description: "Version completa",
+        icon: "screwdriver-wrench",
+        createdAt: Date.now()
+    },
+    {
+        id: "mock-10",
+        title: "HDD Low Level Format Tool",
+        url: "https://download2391.mediafire.com/ziawyxncqfvgdzmuwB0SvMHm_4sLC7AJ7rqAyoFZUQJ5w3D_x_hV_6IEFZrnl5rQT79_SIH2tk9qjjYWZzUWmV9uC-5Uy--59WdqmM4_AKe77PKRIpZy2AFqr-cvM-sXPIMGFMf7z9cxQkTcvvxMjD1kI_zV7v-EsNRJMC3Ej_CE/12q163k1rmbz1n5/HDD+Low+Level+Format.EXE",
+        category: "Herramientas",
+        size: "1.95 MB",
+        description: "Formateo Lento",
+        icon: "screwdriver-wrench",
+        createdAt: Date.now()
+    },
+    {
+        id: "mock-11",
         title: "7-Zip",
         url: "https://release-assets.githubusercontent.com/github-production-release-asset/466446150/d9c834c2-819e-4343-9cd4-1ea61004285c?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-05-21T03%3A39%3A01Z&rscd=attachment%3B+filename%3D7z2501-x64.exe&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-05-21T02%3A38%3A22Z&ske=2026-05-21T03%3A39%3A01Z&sks=b&skv=2018-11-09&sig=JnWL0WQteQfpU8fxSOj3CFp%2Bz%2BBEEih8vbDxdZ7ZKBs%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc3OTMzMjE5NywibmJmIjoxNzc5MzMxODk3LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.Kt4iAFZ-Yd-WTALL9O45AxlQuJR-bnb5YtEHlBLb3t4&response-content-disposition=attachment%3B%20filename%3D7z2501-x64.exe&response-content-type=application%2Foctet-stream",
         category: "Herramientas",
@@ -97,7 +117,28 @@ const DEFAULT_LINKS = [
         description: "Descomprimir",
         icon: "file-zipper",
         createdAt: Date.now()
+    },
+    {
+        id: "mock-12",
+        title: "ChotOS 10 22H2",
+        url: "https://download2390.mediafire.com/1k1er9r9ghpgUj7qkfnh4z-ZBjlHDOPMWxrb_jNngAEN6vONnNMU2PjuVC1G9apjALS0CgoLc1i-wioQPfnT9BO-1HQxkHX2XsGEnQm9DzqvGuz_jL2jepphNvGhihVPQeSkfCoyAfWye2NacwsWx5JpGVtZR-rmJjCte24P9OdY/57cbwvz689sekxn/ChotOS+10+22H2.iso",
+        category: "Otros",
+        size: "1.3 GB",
+        description: "ISO Tomex",
+        icon: "compact-disc",
+        createdAt: Date.now() - 3600000 * 24 * 10 // Hace 10 días
+    },
+    {
+        id: "mock-13",
+        title: "CachyOS",
+        url: "https://cdn77.cachyos.org/ISO/desktop/260426/cachyos-desktop-linux-260426.iso",
+        category: "Otros",
+        size: "2.9 GB",
+        description: "Linux CachyOS",
+        icon: "compact-disc",
+        createdAt: Date.now()
     }
+
 ];
 
 // Asignamos las variables directamente sin usar localStorage

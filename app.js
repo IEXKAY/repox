@@ -71,7 +71,7 @@ const DEFAULT_LINKS = [
     {
         id: "mock-7",
         title: "Driver Booster Pro",
-        url: "https://download2361.mediafire.com/4g4nhd7561xgKZxAGOOD_6J-63CWtP5C1_gbQ3McFr7atvKCppBTrxnLVXXe48txmAz2d7_7no6IZBuJu1Q96PzTpRauF5RPMBU9mVfBZp1LTOe_TpwIDsg0fQgKdeSHys-SjM7ZBIqqxiVG7Oz-6DmbnT4uBd3fLfof3zwGSwAv/o547i07igt8wcy1/DriverBooster.7z",
+        url: "https://store2.gofile.io/download/web/47fba8a9-45f3-49b6-a7f8-e249d3535b0b/DriverBoosterPro%20-%20iexkay.7z",
         category: "Herramientas",
         size: "21.37 MB",
         description: "Es un programa que descargar e instalar automáticamente los controladores faltantes o desactualizados de tu computadora",
@@ -110,6 +110,16 @@ const DEFAULT_LINKS = [
     },
     {
         id: "mock-11",
+        title: "Free Download Manager",
+        url: "https://cold-na-phx-2.gofile.io/download/web/06d9d1ef-52b4-42b7-b870-4bb6c3094b99/fdm_x64_setup.exe",
+        category: "Herramientas",
+        size: "46.6 MB",
+        description: "Es un gestor de descargas para los sistemas operativos Microsoft Windows, Mac OS, Linux y Android.",
+        icon: "screwdriver-wrench",
+        createdAt: Date.now()
+    },
+    {
+        id: "mock-12",
         title: "7-Zip",
         url: "https://release-assets.githubusercontent.com/github-production-release-asset/466446150/d9c834c2-819e-4343-9cd4-1ea61004285c?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-05-21T03%3A39%3A01Z&rscd=attachment%3B+filename%3D7z2501-x64.exe&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-05-21T02%3A38%3A22Z&ske=2026-05-21T03%3A39%3A01Z&sks=b&skv=2018-11-09&sig=JnWL0WQteQfpU8fxSOj3CFp%2Bz%2BBEEih8vbDxdZ7ZKBs%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc3OTMzMjE5NywibmJmIjoxNzc5MzMxODk3LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.Kt4iAFZ-Yd-WTALL9O45AxlQuJR-bnb5YtEHlBLb3t4&response-content-disposition=attachment%3B%20filename%3D7z2501-x64.exe&response-content-type=application%2Foctet-stream",
         category: "Herramientas",
@@ -119,7 +129,7 @@ const DEFAULT_LINKS = [
         createdAt: Date.now()
     },
     {
-        id: "mock-12",
+        id: "mock-13",
         title: "ChotOS 10 22H2",
         url: "https://download2390.mediafire.com/1k1er9r9ghpgUj7qkfnh4z-ZBjlHDOPMWxrb_jNngAEN6vONnNMU2PjuVC1G9apjALS0CgoLc1i-wioQPfnT9BO-1HQxkHX2XsGEnQm9DzqvGuz_jL2jepphNvGhihVPQeSkfCoyAfWye2NacwsWx5JpGVtZR-rmJjCte24P9OdY/57cbwvz689sekxn/ChotOS+10+22H2.iso",
         category: "Otros",
@@ -129,7 +139,7 @@ const DEFAULT_LINKS = [
         createdAt: Date.now() - 3600000 * 24 * 10 // Hace 10 días
     },
     {
-        id: "mock-13",
+        id: "mock-14",
         title: "CachyOS",
         url: "https://cdn77.cachyos.org/ISO/desktop/260426/cachyos-desktop-linux-260426.iso",
         category: "Otros",

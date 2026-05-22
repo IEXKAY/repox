@@ -140,6 +140,16 @@ const DEFAULT_LINKS = [
     },
     {
         id: "mock-14",
+        title: "WinPE11/10 Sergei Strelec",
+        url: "https://store-na-phx-1.gofile.io/download/web/253f0c07-f509-49da-8af2-e66a3c20e17a/WinPE11_10_Sergei_Strelec_x64_2026.05.11_English%20-%20iexkay.iso",
+        category: "Otros",
+        size: "3.35 GB",
+        description: "Es un sistema operativo minimalista que permite iniciar computadoras desde medios externos",
+        icon: "compact-disc",
+        createdAt: Date.now() - 3600000 * 24 * 10 // Hace 10 días
+    },
+    {
+        id: "mock-15",
         title: "CachyOS",
         url: "https://cdn77.cachyos.org/ISO/desktop/260426/cachyos-desktop-linux-260426.iso",
         category: "Otros",

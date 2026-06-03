@@ -51,7 +51,7 @@ const DEFAULT_LINKS = [
     {
         id: "mock-5",
         title: "Ventoy",
-        url: "https://flylife.dl.sourceforge.net/project/ventoy/v1.1.12/ventoy-1.1.12-windows.zip?viasf=1&fid=80ebd7ee9c6be264",
+        url: "https://ia902900.us.archive.org/10/items/ventoy-1.1.12-windows/ventoy-1.1.12-windows.zip",
         category: "Herramientas",
         size: "15.9 MB",
         description: "Permite crear una memoria USB booteable con múltiples sistemas operativos (Windows, Linux, etc.)",

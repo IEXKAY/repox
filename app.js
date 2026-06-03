@@ -71,7 +71,7 @@ const DEFAULT_LINKS = [
     {
         id: "mock-7",
         title: "Driver Booster Pro",
-        url: "https://store2.gofile.io/download/web/47fba8a9-45f3-49b6-a7f8-e249d3535b0b/DriverBoosterPro%20-%20iexkay.7z",
+        url: "https://www.iobit.com/es/driver-booster.php",
         category: "Herramientas",
         size: "21.37 MB",
         description: "Es un programa que descargar e instalar automáticamente los controladores faltantes o desactualizados de tu computadora",

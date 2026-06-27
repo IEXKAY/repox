@@ -81,7 +81,7 @@ const DEFAULT_LINKS = [
     {
         id: "mock-8",
         title: "Adobe Acrobat Pro DC",
-        url: "https://cold-na-phx-1.gofile.io/download/web/1b252b7e-d70b-4784-bc6e-191532ced05b/Adobe%20Acrobat%20Pro%20DC%202020.006.20042%20-%20iexkay.rar",
+        url: "https://dn710202.ca.archive.org/0/items/adobe-acrobat-pro-iexkay.-7z/Adobe%20Acrobat%20Pro%20-%20iexkay.7z",
         category: "Herramientas",
         size: "689 MB",
         description: "Version completa de Adobe Acrobat Pro DC 2020.006.20042",

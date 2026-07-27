@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="cloudGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e0f2fe"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Container background with rounded corners -->
+  <rect width="512" height="512" rx="120" fill="url(#bgGlow)"/>
+
+  <!-- Subtle inner border highlight -->
+  <rect width="510" height="510" x="1" y="1" rx="119" fill="none" stroke="#ffffff" stroke-opacity="0.3" stroke-width="3"/>
+
+  <!-- Cloud icon group -->
+  <g filter="url(#shadow)" transform="translate(0, -6)">
+    <!-- Cloud Silhouette -->
+    <path d="M 368 224 C 360.7 167.3 312.1 124 253 124 C 204.6 124 163.5 153.3 146.5 195.1 C 99.8 200.7 64 240.6 64 289 C 64 343.7 108.3 388 163 388 L 364 388 C 410.4 388 448 350.4 448 304 C 448 259.6 413.6 226.7 368 224 Z" fill="url(#cloudGrad)"/>
+    
+    <!-- Download Arrow in center of Cloud -->
+    <path d="M 256 200 L 256 308 M 214 272 L 256 314 L 298 272" fill="none" stroke="#6366f1" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

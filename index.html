@@ -3,34 +3,36 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REPOX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>REPOX — Repositorio de Descargas por @iexkay</title>
+    <meta name="description" content="Descarga las mejores herramientas, utilidades y juegos para tu equipo. Repositorio de software curado por @iexkay.">
 
-    <!-- Favicon & Iconos de la pestaña / marcadores -->
+    <!-- Favicon & Iconos de pestaña -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="manifest" href="site.webmanifest">
-    <meta name="theme-color" content="#0b0f19">
+    <meta name="theme-color" content="#070a14">
 
-    <!-- Fuentes de Google: Outfit (Tipografía moderna y premium) -->
+    <!-- Fuentes de Google: Outfit + JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
         rel="stylesheet">
 
-    <!-- Biblioteca de iconos Font Awesome (para botones, categorías, etc.) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Biblioteca de iconos Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Hoja de estilos externa (CSS) -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Contenedor para efectos visuales de fondo (Evita desbordes horizontales en celular) -->
-    <div class="bg-glow-container">
+    <!-- Contenedor para efectos visuales de fondo Glassmorphism -->
+    <div class="bg-glow-container" aria-hidden="true">
+        <div class="bg-mesh-grid"></div>
         <div class="bg-glow bg-glow-1"></div>
         <div class="bg-glow bg-glow-2"></div>
         <div class="bg-glow bg-glow-3"></div>
@@ -39,129 +41,149 @@
     <!-- Contenedor principal de la aplicación -->
     <div class="app-container">
 
-        <!-- CABECERA (Header): Logo, Barra de Búsqueda y Botón de Añadir Enlace -->
+        <!-- CABECERA: Perfil Instagram @iexkay + Buscador Typewriter + Estado del Hub -->
         <header class="app-header">
-            <div class="header-logo">
-                <div class="logo-icon">
-                    <i class="fa-solid fa-cloud-arrow-down"></i>
-                </div>
-                <div class="logo-text">
-                    <h1>REPOX</h1>
-                    <span>Descarga las mejores herramientas para tu equipo.</span>
-                </div>
-            </div>
+            <!-- Efecto láser animado en el borde superior de cristal -->
+            <div class="header-laser-glow"></div>
 
-            <!-- Buscador en tiempo real -->
+            <!-- Lado izquierdo: Perfil de Instagram oficial de iexkay -->
+            <a href="https://www.instagram.com/iexkay/" target="_blank" rel="noopener noreferrer" class="instagram-pill" title="Visitar perfil de Instagram @iexkay">
+                <div class="instagram-icon-box">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div class="instagram-text">
+                    <span class="ig-handle">@iexkay</span>
+                    <span class="ig-badge"><i class="fa-solid fa-circle-check"></i> Creator</span>
+                </div>
+            </a>
+
+            <!-- Centro: Buscador inteligente con animación Typewriter en tiempo real -->
             <div class="header-search">
                 <div class="search-box">
                     <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                    <input type="text" id="search-input" placeholder="Buscar por titulo o descripción...">
-                    <button id="clear-search" class="clear-btn" style="display: none;">
+                    <input type="text" id="search-input" placeholder="Buscar por título o descripción..." autocomplete="off" spellcheck="false" aria-label="Buscar software en el repositorio">
+                    <button id="clear-search" class="clear-btn" style="display: none;" title="Limpiar búsqueda" aria-label="Limpiar búsqueda">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
                 </div>
             </div>
-
         </header>
 
-        <!-- PANEL DE ESTADÍSTICAS (Dashboard Stats) -->
-        <section class="stats-dashboard">
-            <!-- Tarjeta: Gaming -->
-            <div class="stat-card">
-                <div class="stat-icon gaming">
+        <!-- PANEL DE NAVEGACIÓN POR CATEGORÍAS (Único, interactivo y sin duplicados) -->
+        <section class="category-dashboard" id="category-dashboard" aria-label="Categorías de software">
+            <!-- Categoría: Todos -->
+            <div class="category-card active" data-category="all" role="button" tabindex="0" title="Ver todos los enlaces">
+                <div class="card-glow-layer total-glow"></div>
+                <div class="category-icon total">
+                    <i class="fa-solid fa-layer-group"></i>
+                </div>
+                <div class="category-info">
+                    <div class="category-header-row">
+                        <span class="category-title">Todos</span>
+                        <span class="category-status-pill">Activo</span>
+                    </div>
+                    <div class="category-count-row">
+                        <span class="category-number" id="stat-total-count">0</span>
+                        <span class="category-label">Enlaces</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categoría: Gaming -->
+            <div class="category-card" data-category="Gaming" role="button" tabindex="0" title="Filtrar por Gaming">
+                <div class="card-glow-layer gaming-glow"></div>
+                <div class="category-icon gaming">
                     <i class="fa-solid fa-gamepad"></i>
                 </div>
-                <div class="stat-info">
-                    <h3 id="stat-gaming-count">0</h3>
-                    <p>Gaming</p>
+                <div class="category-info">
+                    <div class="category-header-row">
+                        <span class="category-title">Gaming</span>
+                        <span class="category-status-pill">Filtrar</span>
+                    </div>
+                    <div class="category-count-row">
+                        <span class="category-number" id="stat-gaming-count">0</span>
+                        <span class="category-label">Juegos</span>
+                    </div>
                 </div>
             </div>
-            <!-- Tarjeta: Herramientas -->
-            <div class="stat-card">
-                <div class="stat-icon tools">
+
+            <!-- Categoría: Herramientas -->
+            <div class="category-card" data-category="Herramientas" role="button" tabindex="0" title="Filtrar por Herramientas">
+                <div class="card-glow-layer tools-glow"></div>
+                <div class="category-icon tools">
                     <i class="fa-solid fa-screwdriver-wrench"></i>
                 </div>
-                <div class="stat-info">
-                    <h3 id="stat-tools-count">0</h3>
-                    <p>Herramientas</p>
+                <div class="category-info">
+                    <div class="category-header-row">
+                        <span class="category-title">Herramientas</span>
+                        <span class="category-status-pill">Filtrar</span>
+                    </div>
+                    <div class="category-count-row">
+                        <span class="category-number" id="stat-tools-count">0</span>
+                        <span class="category-label">Utilidades</span>
+                    </div>
                 </div>
             </div>
-            <!-- Tarjeta: Otros Enlaces -->
-            <div class="stat-card">
-                <div class="stat-icon others">
+
+            <!-- Categoría: Otros Enlaces -->
+            <div class="category-card" data-category="Otros" role="button" tabindex="0" title="Filtrar por Otros">
+                <div class="card-glow-layer others-glow"></div>
+                <div class="category-icon others">
                     <i class="fa-solid fa-box-open"></i>
                 </div>
-                <div class="stat-info">
-                    <h3 id="stat-others-count">0</h3>
-                    <p>Otros Enlaces</p>
-                </div>
-            </div>
-            <!-- Tarjeta: Total Guardados -->
-            <div class="stat-card">
-                <div class="stat-icon total">
-                    <i class="fa-solid fa-link"></i>
-                </div>
-                <div class="stat-info">
-                    <h3 id="stat-total-count">0</h3>
-                    <p>Total Guardados</p>
+                <div class="category-info">
+                    <div class="category-header-row">
+                        <span class="category-title">Otros</span>
+                        <span class="category-status-pill">Filtrar</span>
+                    </div>
+                    <div class="category-count-row">
+                        <span class="category-number" id="stat-others-count">0</span>
+                        <span class="category-label">Sistemas</span>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- DISEÑO PRINCIPAL (Layout): Barra lateral + Cuadrícula de Contenido -->
-        <div class="main-layout">
-
-            <!-- BARRA LATERAL (Sidebar): Gestión e índice de categorías -->
-            <aside class="sidebar">
-                <div class="sidebar-box">
-                    <div class="sidebar-header">
-                        <h2>Categorías</h2>
-                    </div>
-                    <!-- Lista de categorías dinámicas cargadas por JS -->
-                    <ul class="categories-list" id="categories-container">
-                        <!-- Se insertan aquí con JavaScript -->
-                    </ul>
-                </div>
-            </aside>
-
-            <!-- ÁREA DE CONTENIDO: Título de sección + Cuadrícula de archivos -->
-            <main class="content-area">
-                <div class="content-header">
-                    <h2 id="active-category-title">Todos los Enlaces</h2>
-
-                    <!-- Filtro selector para ordenar las tarjetas -->
-                    <div class="sort-selector">
-                        <label for="sort-select">Ordenar por:</label>
-                        <select id="sort-select">
-                            <option value="recent">Más recientes</option>
-                            <option value="oldest">Más antiguos</option>
-                            <option value="alpha-asc">Nombre (A-Z)</option>
-                            <option value="alpha-desc">Nombre (Z-A)</option>
-                        </select>
-                    </div>
+        <!-- SECCIÓN DE CONTENIDO: Título dinámico + Orden + Cuadrícula de software -->
+        <main class="content-area">
+            <div class="content-header">
+                <div class="content-header-title">
+                    <h1 id="active-category-title">Todos los Enlaces</h1>
+                    <span class="active-count-badge" id="active-count-badge">0 enlaces</span>
                 </div>
 
-                <!-- Estado Vacío (Empty State): Se muestra cuando no hay enlaces para mostrar -->
-                <div class="empty-state" id="empty-state" style="display: none;">
-                    <div class="empty-icon">
-                        <i class="fa-solid fa-folder-open"></i>
-                    </div>
-                    <h3>No se encontraron enlaces</h3>
-                    <p>Ajusta tus filtros de búsqueda o categoría en la barra lateral.</p>
+                <div class="sort-selector">
+                    <label for="sort-select"><i class="fa-solid fa-arrow-down-wide-short"></i> Ordenar:</label>
+                    <select id="sort-select" aria-label="Criterio de ordenación">
+                        <option value="recent">Más recientes</option>
+                        <option value="oldest">Más antiguos</option>
+                        <option value="alpha-asc">Nombre (A-Z)</option>
+                        <option value="alpha-desc">Nombre (Z-A)</option>
+                    </select>
                 </div>
+            </div>
 
-                <!-- Cuadrícula (Grid) donde se renderizan las tarjetas de enlaces -->
-                <div class="links-grid" id="links-grid">
-                    <!-- Se insertan aquí con JavaScript -->
+            <!-- Estado Vacío (Empty State) -->
+            <div class="empty-state" id="empty-state" style="display: none;">
+                <div class="empty-icon">
+                    <i class="fa-solid fa-folder-open"></i>
                 </div>
-            </main>
-        </div>
+                <h2>No se encontraron enlaces</h2>
+                <p>No hay software que coincida con tus términos de búsqueda o categoría seleccionada.</p>
+                <button class="btn btn-secondary" id="btn-reset-filters">
+                    <i class="fa-solid fa-rotate-left"></i> Restablecer filtros
+                </button>
+            </div>
+
+            <!-- Cuadrícula de tarjetas de software -->
+            <div class="links-grid" id="links-grid">
+                <!-- Se insertan aquí con JavaScript -->
+            </div>
+        </main>
     </div>
 
-
-
     <!-- Contenedor flotante para notificaciones emergentes (Toasts) -->
-    <div id="toast-container" class="toast-container"></div>
+    <div id="toast-container" class="toast-container" aria-live="polite"></div>
 
     <!-- Lógica principal de JavaScript -->
     <script src="app.js"></script>

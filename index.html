@@ -41,13 +41,25 @@
     <!-- Contenedor principal de la aplicación -->
     <div class="app-container">
 
-        <!-- CABECERA: Buscador + Perfil Instagram @iexkay -->
+        <!-- CABECERA: Logo REPOX + Buscador -->
         <header class="app-header">
             <!-- Efecto láser animado en el borde superior de cristal -->
             <div class="header-laser-glow"></div>
 
 
-            <!-- Buscador con indicaciones estables y resultados en tiempo real -->
+            <div class="header-brand">
+                <div class="repox-logo" role="img" aria-label="REPOX">
+                    <span class="repox-wordmark">REPO<span>X</span></span>
+                    <div class="repox-art" aria-hidden="true">
+                        <span class="repox-orbit"></span>
+                        <span class="repox-cloud"><svg viewBox="0 0 48 48" focusable="false"><path fill="currentColor" d="M14 36a9 9 0 0 1-2-17.8A12 12 0 0 1 35 16a8 8 0 0 1 5 14.2A6 6 0 0 1 34 36Z"/></svg></span>
+                        <span class="repox-mini repox-code">&lt;/&gt;</span>
+                        <span class="repox-mini repox-game"><i class="fa-solid fa-gamepad"></i></span>
+                        <span class="repox-mini repox-tool"><i class="fa-solid fa-wrench"></i></span>
+                    </div>
+                </div>
+            </div>
+            <!-- Buscador con ejemplos animados y resultados en tiempo real -->
             <div class="header-search" role="search">
                 <label class="search-label" for="search-input">Encuentra tu próxima descarga</label>
                 <div class="search-box">
@@ -60,18 +72,7 @@
                 </div>
                 <p class="search-help" id="search-help">Busca por nombre o descripción. Los resultados aparecen al escribir.</p>
             </div>
-            <!-- Lado derecho: Perfil de Instagram oficial de iexkay -->
-            <a href="https://www.instagram.com/iexkay/" target="_blank" rel="noopener noreferrer" class="instagram-pill" title="Visitar perfil de Instagram @iexkay">
-                <div class="instagram-icon-box">
-                    <i class="fa-brands fa-instagram"></i>
-                </div>
-                <div class="instagram-text">
-                    <span class="ig-handle">@iexkay</span>
-                    <span class="ig-badge" aria-label="Insignia de verificación">
-                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="m12 1 3 2.2 3.7-.1 1.1 3.5 3.1 2.1-1.2 3.5 1.2 3.5-3.1 2.1-1.1 3.5-3.7-.1L12 23l-3-2.2-3.7.1-1.1-3.5L1.1 15.3l1.2-3.5-1.2-3.5 3.1-2.1 1.1-3.5 3.7.1Z"/><path fill="none" stroke="#0b1020" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="m7.5 12 3 3 6-6"/></svg>
-                    </span>
-                </div>
-            </a>
+
         </header>
 
         <!-- PANEL DE NAVEGACIÓN POR CATEGORÍAS (Único, interactivo y sin duplicados) -->

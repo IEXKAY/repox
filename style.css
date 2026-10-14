@@ -200,6 +200,76 @@ html, body {
     100% { left: 85%; opacity: 0.6; }
 }
 
+.header-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    flex-shrink: 0;
+}
+
+.repox-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.repox-wordmark {
+    font-size: 2.25rem;
+    font-weight: 800;
+    letter-spacing: -0.06em;
+    color: #aebcd2;
+    line-height: 1;
+}
+
+.repox-wordmark > span { color: #818cf8; }
+
+.repox-art {
+    position: relative;
+    width: 126px;
+    height: 96px;
+}
+
+.repox-orbit {
+    position: absolute;
+    inset: 5px 4px;
+    border: 1px dashed rgba(129, 140, 248, 0.25);
+    border-radius: 50%;
+    transform: rotate(-25deg);
+}
+
+.repox-cloud {
+    position: absolute;
+    inset: 16px 30px;
+    display: grid;
+    place-items: center;
+    color: #d4dcff;
+    border: 1px solid #5962ab;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #292965, #17273e);
+    box-shadow: inset 0 1px 2px #7d83c0, 0 0 24px rgba(99, 102, 241, 0.12);
+    transform: rotate(-5deg);
+}
+
+.repox-cloud svg { width: 42px; height: 42px; }
+
+.repox-mini {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #343e6c;
+    border-radius: 8px;
+    background: #161f35;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.repox-code { left: 0; top: 44px; color: #a5b4fc; }
+.repox-game { right: 3px; top: 13px; color: #c4b5fd; }
+.repox-tool { right: 0; bottom: 3px; color: #67e8f9; }
+
 /* Píldora de Perfil Oficial de Instagram de @iexkay */
 .instagram-pill {
     display: inline-flex;

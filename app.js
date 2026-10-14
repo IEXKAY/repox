@@ -398,9 +398,6 @@ function fallbackCopyToClipboard(text) {
     document.body.removeChild(textArea);
 }
 
-// ==========================================================================
-// ANIMACIÓN DINÁMICA: PLACEHOLDER TYPEWRITER (SUGERENCIAS VIVAS)
-// ==========================================================================
 function initTypewriterPlaceholder() {
     if (!searchInput) return;
 
@@ -478,7 +475,7 @@ searchInput.addEventListener("input", (e) => {
         if (kbdHint) kbdHint.style.display = "none";
     } else {
         clearSearchBtn.style.display = "none";
-        if (kbdHint) kbdHint.style.display = "flex";
+        if (kbdHint) kbdHint.style.display = "";
     }
 
     renderLinks();
@@ -489,7 +486,7 @@ clearSearchBtn.addEventListener("click", () => {
     searchQuery = "";
     clearSearchBtn.style.display = "none";
     const kbdHint = document.querySelector(".search-kbd-hint");
-    if (kbdHint) kbdHint.style.display = "flex";
+    if (kbdHint) kbdHint.style.display = "";
     renderLinks();
     searchInput.focus();
 });
@@ -506,7 +503,7 @@ if (btnResetFilters) {
         searchQuery = "";
         clearSearchBtn.style.display = "none";
         const kbdHint = document.querySelector(".search-kbd-hint");
-        if (kbdHint) kbdHint.style.display = "flex";
+        if (kbdHint) kbdHint.style.display = "";
         filterByCategory("all");
     });
 }
@@ -519,7 +516,8 @@ window.addEventListener("keydown", (e) => {
         searchInput.select();
     }
     if (e.key === "Escape" && document.activeElement === searchInput) {
-        searchInput.blur();
+        if (searchInput.value) clearSearchBtn.click();
+        else searchInput.blur();
     }
 });
 
@@ -563,9 +561,10 @@ function init() {
     });
 
     // 3. Inicialización de datos y componentes
+    initTypewriterPlaceholder();
     updateCategoryCounts();
     renderLinks();
-    initTypewriterPlaceholder();
+
 }
 
 // Arrancar REPOX

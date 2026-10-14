@@ -41,32 +41,37 @@
     <!-- Contenedor principal de la aplicación -->
     <div class="app-container">
 
-        <!-- CABECERA: Perfil Instagram @iexkay + Buscador Typewriter + Estado del Hub -->
+        <!-- CABECERA: Buscador + Perfil Instagram @iexkay -->
         <header class="app-header">
             <!-- Efecto láser animado en el borde superior de cristal -->
             <div class="header-laser-glow"></div>
 
-            <!-- Lado izquierdo: Perfil de Instagram oficial de iexkay -->
+
+            <!-- Buscador con indicaciones estables y resultados en tiempo real -->
+            <div class="header-search" role="search">
+                <label class="search-label" for="search-input">Encuentra tu próxima descarga</label>
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
+                    <input type="search" id="search-input" placeholder="Escribe para buscar software..." autocomplete="off" spellcheck="false" aria-describedby="search-help" aria-controls="links-grid">
+                    <kbd class="search-kbd-hint" aria-hidden="true">Ctrl + K</kbd>
+                    <button type="button" id="clear-search" class="clear-btn" style="display: none;" title="Limpiar búsqueda" aria-label="Limpiar búsqueda">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <p class="search-help" id="search-help">Busca por nombre o descripción. Los resultados aparecen al escribir.</p>
+            </div>
+            <!-- Lado derecho: Perfil de Instagram oficial de iexkay -->
             <a href="https://www.instagram.com/iexkay/" target="_blank" rel="noopener noreferrer" class="instagram-pill" title="Visitar perfil de Instagram @iexkay">
                 <div class="instagram-icon-box">
                     <i class="fa-brands fa-instagram"></i>
                 </div>
                 <div class="instagram-text">
                     <span class="ig-handle">@iexkay</span>
-                    <span class="ig-badge"><i class="fa-solid fa-circle-check"></i> Creator</span>
+                    <span class="ig-badge" aria-label="Insignia de verificación">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="m12 1 3 2.2 3.7-.1 1.1 3.5 3.1 2.1-1.2 3.5 1.2 3.5-3.1 2.1-1.1 3.5-3.7-.1L12 23l-3-2.2-3.7.1-1.1-3.5L1.1 15.3l1.2-3.5-1.2-3.5 3.1-2.1 1.1-3.5 3.7.1Z"/><path fill="none" stroke="#0b1020" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="m7.5 12 3 3 6-6"/></svg>
+                    </span>
                 </div>
             </a>
-
-            <!-- Centro: Buscador inteligente con animación Typewriter en tiempo real -->
-            <div class="header-search">
-                <div class="search-box">
-                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                    <input type="text" id="search-input" placeholder="Buscar por título o descripción..." autocomplete="off" spellcheck="false" aria-label="Buscar software en el repositorio">
-                    <button id="clear-search" class="clear-btn" style="display: none;" title="Limpiar búsqueda" aria-label="Limpiar búsqueda">
-                        <i class="fa-solid fa-xmark"></i>
-                    </button>
-                </div>
-            </div>
         </header>
 
         <!-- PANEL DE NAVEGACIÓN POR CATEGORÍAS (Único, interactivo y sin duplicados) -->
@@ -149,7 +154,7 @@
             <div class="content-header">
                 <div class="content-header-title">
                     <h1 id="active-category-title">Todos los Enlaces</h1>
-                    <span class="active-count-badge" id="active-count-badge">0 enlaces</span>
+                    <span class="active-count-badge" id="active-count-badge" role="status" aria-live="polite" aria-atomic="true">0 enlaces</span>
                 </div>
 
                 <div class="sort-selector">
